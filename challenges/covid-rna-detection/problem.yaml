@@ -1,0 +1,6 @@
+problem_format_version: '2023-07-draft'
+uuid: 8fe3d478-17cb-47e1-90ef-2b81492b5eca
+name: COVID-19 RNA Detection
+limits:
+  time_limit: 2
+  memory: 256
