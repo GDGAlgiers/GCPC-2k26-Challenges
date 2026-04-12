@@ -3,9 +3,9 @@ name: Validate Problems
 on:
   pull_request:
     paths:
-      - 'challenges/**'
-      - 'scripts/**'
-      - 'assets/**'
+      - "challenges/**"
+      - "scripts/**"
+      - "assets/**"
 
 jobs:
   # ─── Job 1: structural validation ──────────────────────────────────────────
