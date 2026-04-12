@@ -1,0 +1,18 @@
+name: GCPC Algiers 2026
+short-name: gcpc2026
+start-time: 2026-XX-XXT09:00:00+01:00
+duration: 5:00:00
+
+# One entry per problem.
+# - id must match the folder name under challenges/
+# - label is the letter shown on the scoreboard (A, B, C, ...)
+# - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
+# - status: draft | ready | tested | published
+problems: []
+# problems:
+#   - id: problem-id
+#     label: A
+#     color: "#FF5733"
+#     difficulty: easy        # easy | medium | hard
+#     author: "Author Name"
+#     status: draft

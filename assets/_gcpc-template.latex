@@ -1,0 +1,101 @@
+% GCPC Problem Statement -- Pandoc LaTeX Template
+%
+% HOW THIS WORKS:
+%   Pandoc converts problem.md to LaTeX and injects it at the BODY placeholder.
+%   title, author, difficulty: from YAML front matter in problem.md
+%   logo-path, fonts-path:     passed via -V on the command line
+%   All fonts, margins, and branding live here -- authors only write Markdown.
+%
+% RENDER (from inside the challenge directory):
+%   ../../scripts/render-pdf.sh
+
+\documentclass[11pt,a4paper]{article}
+
+%% ── Font: Poppins (bundled TTF via fontspec + XeLaTeX) ──────────────────────
+\usepackage{fontspec}
+$if(fonts-path)$
+\setmainfont{Poppins}[
+  Path           = $fonts-path$/,
+  Extension      = .ttf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-SemiBold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic
+]
+$else$
+%% Fallback when fonts-path is not passed: use a clean system sans-serif.
+\setsansfont{DejaVu Sans}
+\renewcommand{\familydefault}{\sfdefault}
+$endif$
+
+%% ── Page layout ──────────────────────────────────────────────────────────────
+\usepackage[top=2cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{7pt}
+
+%% ── Math ─────────────────────────────────────────────────────────────────────
+\usepackage{amsmath,amssymb}
+
+%% ── Code / verbatim blocks ───────────────────────────────────────────────────
+\usepackage{fancyvrb}
+\usepackage[dvipsnames,svgnames]{xcolor}
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+%% Style for fenced code blocks (``` ... ```)
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{
+  commandchars=\\\{\},
+  xleftmargin=1em,
+  fontsize=\small
+}
+
+%% ── Graphics ─────────────────────────────────────────────────────────────────
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+
+%% ── Tables ───────────────────────────────────────────────────────────────────
+\usepackage{booktabs,longtable,array,multirow}
+
+%% ── Links ────────────────────────────────────────────────────────────────────
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[hidelinks,breaklinks=true]{hyperref}
+
+%% ── Lists ────────────────────────────────────────────────────────────────────
+\usepackage{enumitem}
+\setlist{noitemsep, topsep=3pt}
+
+%% ── Section headings: bold text, no numbering, no underline ─────────────────
+%% Matches the screenshot style (Description / Note / Input / Output as bold headings)
+\usepackage[explicit]{titlesec}
+\titleformat{\section}{\large\bfseries}{}{0em}{#1}
+\titlespacing*{\section}{0pt}{1em}{0.3em}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{#1}
+\titlespacing*{\subsection}{0pt}{0.7em}{0.2em}
+
+%% ── No repeating header/footer -- logo appears only once at top ──────────────
+\pagestyle{plain}
+
+%% ── Pandoc required macros ───────────────────────────────────────────────────
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setlength{\emergencystretch}{3em}
+
+%% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+%% ── Title block (matches screenshot layout) ──────────────────────────────────
+$if(logo-path)$
+\includegraphics[height=3cm]{$logo-path$}\\[0.7em]
+$endif$
+{\LARGE\bfseries $title$}\\[0.5em]
+$if(author)$\textbf{Author :} $author$\\$endif$
+$if(difficulty)$\textbf{Difficulty Level :} $difficulty$\\$endif$
+\vspace{0.5em}
+
+%% ── Problem body ─────────────────────────────────────────────────────────────
+$body$
+
+\end{document}

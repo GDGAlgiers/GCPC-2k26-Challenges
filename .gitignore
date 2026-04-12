@@ -1,0 +1,26 @@
+# ── Generated ZIPs (produced by zipping_problems.sh) ─────────────────────────
+challenges/*.zip
+
+# ── Rendered PDFs (produced by render-pdf.sh / CI) ───────────────────────────
+# Commit problem.pdf only when you're ready to publish a final version.
+# During authoring, let CI render it — download from workflow artifacts instead.
+challenges/*/statement/problem.pdf
+
+# ── Compiled binaries (local testing) ────────────────────────────────────────
+challenges/*/submissions/accepted/sol
+challenges/*/submissions/accepted/*.class
+challenges/*/submissions/wrong_answer/sol
+challenges/*/submissions/wrong_answer/*.class
+
+# ── OS / editor junk ─────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# ── Python cache ─────────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+
+# ── Java build output ────────────────────────────────────────────────────────
+*.class

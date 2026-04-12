@@ -1,0 +1,204 @@
+name: Validate Problems
+
+on:
+  pull_request:
+    paths:
+      - 'challenges/**'
+      - 'scripts/**'
+      - 'assets/**'
+
+jobs:
+  # ─── Job 1: structural validation ──────────────────────────────────────────
+  validate-structure:
+    name: Check problem structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate each problem folder
+        run: |
+          set -euo pipefail
+          errors=0
+
+          for dir in challenges/*/; do
+            name="$(basename "$dir")"
+
+            # Skip template and any underscore-prefixed folders
+            [[ "$name" == _* ]] && continue
+
+            echo "--- Checking: $name"
+
+            # problem.yaml must exist
+            if [[ ! -f "$dir/problem.yaml" ]]; then
+              echo "  ERROR: missing problem.yaml"
+              errors=$((errors + 1))
+            else
+              # problem_format_version and uuid must be present
+              if ! grep -q "problem_format_version" "$dir/problem.yaml"; then
+                echo "  ERROR: problem.yaml missing 'problem_format_version'"
+                errors=$((errors + 1))
+              fi
+              uuid_val=$(grep "^uuid:" "$dir/problem.yaml" | awk '{print $2}' | tr -d '"')
+              if [[ -z "$uuid_val" || "$uuid_val" == "00000000-0000-0000-0000-000000000000" ]]; then
+                echo "  ERROR: problem.yaml has placeholder uuid — generate a real one"
+                errors=$((errors + 1))
+              fi
+            fi
+
+            # domjudge-problem.ini must exist
+            if [[ ! -f "$dir/domjudge-problem.ini" ]]; then
+              echo "  ERROR: missing domjudge-problem.ini"
+              errors=$((errors + 1))
+            fi
+
+            # statement/problem.md must exist
+            if [[ ! -f "$dir/statement/problem.md" ]]; then
+              echo "  ERROR: missing statement/problem.md"
+              errors=$((errors + 1))
+            fi
+
+            # data/sample/ must have at least one .in/.ans pair
+            shopt -s nullglob
+            samples=("$dir"data/sample/*.in)
+            if [[ ${#samples[@]} -eq 0 ]]; then
+              echo "  ERROR: no sample test cases in data/sample/"
+              errors=$((errors + 1))
+            fi
+
+            # data/secret/ must have at least one .in/.ans pair
+            secrets=("$dir"data/secret/*.in)
+            if [[ ${#secrets[@]} -eq 0 ]]; then
+              echo "  ERROR: no secret test cases in data/secret/"
+              errors=$((errors + 1))
+            fi
+
+            # every .in must have a matching .ans
+            for inf in "$dir"data/sample/*.in "$dir"data/secret/*.in; do
+              [[ -f "$inf" ]] || continue
+              ans="${inf%.in}.ans"
+              if [[ ! -f "$ans" ]]; then
+                echo "  ERROR: $inf has no matching .ans file"
+                errors=$((errors + 1))
+              fi
+            done
+
+            # at least one accepted solution must exist (c, cpp, py, go, js, java)
+            shopt -s nullglob
+            accepted=("$dir"submissions/accepted/*)
+            if [[ ${#accepted[@]} -eq 0 ]]; then
+              echo "  ERROR: no accepted solutions in submissions/accepted/"
+              errors=$((errors + 1))
+            fi
+
+            # warn about Windows line endings in test cases
+            for f in "$dir"data/sample/*.in "$dir"data/sample/*.ans \
+                     "$dir"data/secret/*.in "$dir"data/secret/*.ans; do
+              [[ -f "$f" ]] || continue
+              if file "$f" | grep -q CRLF; then
+                echo "  WARNING: $f has Windows line endings (CRLF) — convert to LF"
+              fi
+            done
+          done
+
+          if [[ $errors -gt 0 ]]; then
+            echo ""
+            echo "Found $errors error(s). Fix them before merging."
+            exit 1
+          fi
+          echo "All problems passed structural validation."
+
+  # ─── Job 2: run accepted solutions against test cases ──────────────────────
+  test-solutions:
+    name: Test accepted solutions
+    runs-on: ubuntu-latest
+    needs: validate-structure
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.20"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Make test script executable
+        run: chmod +x scripts/solution_test.sh
+
+      - name: Run accepted solutions
+        run: |
+          set -euo pipefail
+          overall=0
+
+          for dir in challenges/*/; do
+            name="$(basename "$dir")"
+            [[ "$name" == _* ]] && continue
+
+            shopt -s nullglob
+            for sol in "$dir"submissions/accepted/*; do
+              [[ -f "$sol" ]] || continue
+
+              # Skip skeleton files that haven't been filled in
+              if grep -qE "^// TODO|^# TODO|^/\* TODO" "$sol" 2>/dev/null; then
+                echo "SKIP  $sol (skeleton not filled in)"
+                continue
+              fi
+
+              echo "--- Testing $sol"
+              pushd "$dir" > /dev/null
+              rel="submissions/accepted/$(basename "$sol")"
+              if ! ../../scripts/solution_test.sh "$rel"; then
+                echo "FAIL  $sol"
+                overall=1
+              fi
+              popd > /dev/null
+            done
+          done
+
+          exit $overall
+
+  # ─── Job 3: render PDFs ─────────────────────────────────────────────────────
+  render-pdfs:
+    name: Render problem PDFs
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Pandoc + XeLaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            pandoc \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-latex-extra
+
+      - name: Render PDFs
+        run: |
+          set -euo pipefail
+          chmod +x scripts/render-pdf.sh
+          LOGO="$(realpath assets/gcpc-logo.png)"
+          FONTS="$(realpath assets/fonts)"
+          TEMPLATE="$(realpath assets/_gcpc-template.latex)"
+          for dir in challenges/*/; do
+            name="$(basename "$dir")"
+            [[ "$name" == _* ]] && continue
+            [[ -f "$dir/statement/problem.md" ]] || continue
+            echo "Rendering $name..."
+            pandoc "$dir/statement/problem.md" \
+              --pdf-engine=xelatex \
+              --template="$TEMPLATE" \
+              -V logo-path="$LOGO" \
+              -V fonts-path="$FONTS" \
+              -o "$dir/statement/problem.pdf"
+          done
+
+      - name: Upload PDFs as artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: problem-pdfs
+          path: challenges/*/statement/problem.pdf
+          if-no-files-found: warn
