@@ -166,6 +166,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # need full history to diff against base branch
+
+      - name: Detect changed challenge folders
+        id: changed
+        run: |
+          # Find all challenge folder names touched by this PR
+          changed=$(git diff --name-only origin/${{ github.base_ref }}...HEAD \
+            | grep '^challenges/' \
+            | sed 's|^challenges/\([^/]*\)/.*|\1|' \
+            | sort -u \
+            | grep -v '^_')
+          echo "folders<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$changed"     >> "$GITHUB_OUTPUT"
+          echo "EOF"          >> "$GITHUB_OUTPUT"
+          echo "Changed challenges: $changed"
+
+      - name: Cache apt packages
+        uses: actions/cache@v4
+        id: apt-cache
+        with:
+          path: /var/cache/apt/archives
+          key: apt-texlive-${{ runner.os }}-${{ hashFiles('.github/workflows/validate.yml') }}
+          restore-keys: apt-texlive-${{ runner.os }}-
 
       - name: Install Pandoc + XeLaTeX
         run: |
@@ -179,22 +203,24 @@ jobs:
       - name: Render PDFs
         run: |
           set -euo pipefail
-          chmod +x scripts/render-pdf.sh
           LOGO="$(realpath assets/gcpc-logo.png)"
           FONTS="$(realpath assets/fonts)"
           TEMPLATE="$(realpath assets/_gcpc-template.latex)"
-          for dir in challenges/*/; do
-            name="$(basename "$dir")"
-            [[ "$name" == _* ]] && continue
-            [[ -f "$dir/statement/problem.md" ]] || continue
+          LUA_FILTER="$(realpath assets/tables-border.lua)"
+
+          while IFS= read -r name; do
+            [[ -z "$name" ]] && continue
+            dir="challenges/$name"
+            [[ -f "$dir/statement/problem.md" ]] || { echo "SKIP $name (no problem.md)"; continue; }
             echo "Rendering $name..."
             pandoc "$dir/statement/problem.md" \
               --pdf-engine=xelatex \
               --template="$TEMPLATE" \
+              --lua-filter="$LUA_FILTER" \
               -V logo-path="$LOGO" \
               -V fonts-path="$FONTS" \
               -o "$dir/statement/problem.pdf"
-          done
+          done <<< "${{ steps.changed.outputs.folders }}"
 
       - name: Upload PDFs as artifacts
         uses: actions/upload-artifact@v4

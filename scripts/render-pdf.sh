@@ -37,6 +37,7 @@ args=(
     "statement/problem.md"
     "--pdf-engine=xelatex"
     "--template=$TEMPLATE"
+    "--lua-filter=$ROOT/assets/tables-border.lua"
 )
 
 if [[ -f "$LOGO" ]]; then
