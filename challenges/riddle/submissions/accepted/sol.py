@@ -1,44 +1,43 @@
 import sys
 
-
 def solve():
-    input_data = input().split()
-    if not input_data: return
-    n = int(input_data[0])
-    d = int(input_data[1])
-    mod = 10 ** 9 + 7
-
-    p2 = [1 << i for i in range(n)]
-    jump = [p2[j] * n + j for j in range(n)]
-
-    adj = []
-    for i in range(n):
-        neighbors = []
-        for j in range(max(0, i - d), min(n, i + d + 1)):
-            if i != j:
-                neighbors.append((p2[j], jump[j]))
-        adj.append(neighbors)
+    input = sys.stdin.readline
+    n, d = map(int, input().split())
+    mod = 10**9 + 7
 
     num_masks = 1 << n
-    dp = [0] * (num_masks * n)
 
+    # Precompute neighbors
+    adj = [[] for _ in range(n)]
     for i in range(n):
-        dp[p2[i] * n + i] = 1
+        L = max(0, i - d)
+        R = min(n, i + d + 1)
+        for j in range(L, R):
+            if j != i:
+                adj[i].append(j)
 
-    for mask in range(1, num_masks):
-        m_off = mask * n
-        for i in range(n):
-            val = dp[m_off + i]
-            if not val: continue
+    # dp[mask][last]
+    dp = [[0]*n for _ in range(num_masks)]
 
-            for p2_j, jump_val in adj[i]:
-                if not (mask & p2_j):
-                    dp[m_off + jump_val] += val
+    # base cases
+    for i in range(n):
+        dp[1 << i][i] = 1
 
-    full_mask_off = (num_masks - 1) * n
-    ans = sum(dp[full_mask_off: full_mask_off + n]) % mod
-    sys.stdout.write(str(ans) + '\n')
+    for mask in range(num_masks):
+        row = dp[mask]
+        for last in range(n):
+            val = row[last]
+            if val == 0:
+                continue
 
+            for nxt in adj[last]:
+                if not (mask & (1 << nxt)):
+                    dp[mask | (1 << nxt)][nxt] += val
+                    if dp[mask | (1 << nxt)][nxt] >= mod:
+                        dp[mask | (1 << nxt)][nxt] -= mod
 
-if __name__ == '__main__':
+    full_mask = num_masks - 1
+    print(sum(dp[full_mask]) % mod)
+
+if __name__ == "__main__":
     solve()
