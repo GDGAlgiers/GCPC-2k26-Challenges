@@ -26,15 +26,15 @@ Intrigued by the interesting challenge, and the large prize of 654,321 DA, Ramzy
 
 ## Input
 
-The first and only line of input contains two integers $n$ and $d$ ($1 \le n \le 20, 1 \le d \le 5$).
+The first and only line of input contains two integers $n$ and $d$.
 
 ## Output
 
-Print a single integer — the number of permutations of size $n$ whose adjacent elements differ by at most $d$, modulo $10^9 + 7$.
+Print a single integer — the number of permutations of size $n$ whose adjacent elements differ by at most $d$.
 
 ## Constraints
 
-- $1 \le n \le 20$
+- $1 \le n \le 19$
 - $1 \le d \le 5$
 - Time limit: **2.0 seconds**
 - Memory limit: **256 MB**

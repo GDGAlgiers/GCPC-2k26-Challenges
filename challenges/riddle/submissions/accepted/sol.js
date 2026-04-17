@@ -5,7 +5,6 @@ function solve() {
     if (input.length < 2 || input[0] === "") return;
     const n = parseInt(input[0], 10);
     const d = parseInt(input[1], 10);
-    const mod = 1000000007;
     
     const dp = new Float64Array((1 << n) * n);
     
@@ -35,7 +34,7 @@ function solve() {
                 let idx = 31 - Math.clz32(lowestBit); 
                 
                 const nextMaskOffset = (mask | (1 << idx)) * n;
-                dp[nextMaskOffset + idx] = (dp[nextMaskOffset + idx] + currentVal) % mod;
+                dp[nextMaskOffset + idx] = (dp[nextMaskOffset + idx] + currentVal);
                 
                 cur ^= lowestBit;
             }
@@ -45,7 +44,7 @@ function solve() {
     let ans = 0;
     const fullMaskOffset = ((1 << n) - 1) * n;
     for (let i = 0; i < n; i++) {
-        ans = (ans + dp[fullMaskOffset + i]) % mod;
+        ans = (ans + dp[fullMaskOffset + i]);
     }
     process.stdout.write(ans.toString() + '\n');
 }

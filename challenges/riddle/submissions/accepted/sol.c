@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MOD 1000000007
 
 int main() {
     int n, d;
@@ -33,7 +32,7 @@ int main() {
             while (cur > 0) {
                 int idx = __builtin_ctz(cur);
                 int next_mask = mask | (1 << idx);
-                dp[next_mask][idx] = (dp[next_mask][idx] + dp[mask][i]) % MOD;
+                dp[next_mask][idx] = (dp[next_mask][idx] + dp[mask][i]);
                 cur ^= (1 << idx);
             }
         }
@@ -41,7 +40,7 @@ int main() {
     
     long long ans = 0;
     for (int i = 0; i < n; ++i) {
-        ans = (ans + dp[(1 << n) - 1][i]) % MOD;
+        ans = (ans + dp[(1 << n) - 1][i]);
     }
     printf("%lld\n", ans);
     

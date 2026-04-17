@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-const ll mod = 1e9 + 7;
 #define Algerian ios::sync_with_stdio(false);
 #define OI cin.tie(nullptr);
 
@@ -27,7 +26,6 @@ int main(){
             while(cur > 0){
                 int idx = __builtin_ctz(cur);
                 dp[mask | (1ll<<idx)][idx] += dp[mask][i];
-                dp[mask | (1ll<<idx)][idx] %= mod;
                 cur ^= (1ll << idx);
             }
         }
@@ -35,7 +33,6 @@ int main(){
     ll ans = 0;
     for (int i = 0; i < n; ++i){
         ans += dp[(1ll<<n)-1][i];
-        ans %= mod;
     }
     cout << ans;
 }

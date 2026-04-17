@@ -12,7 +12,6 @@ func main() {
 		return
 	}
 
-	mod := int64(1e9 + 7)
 
 	dp := make([][]int64, 1<<n)
 	for i := range dp {
@@ -42,7 +41,7 @@ func main() {
 			for cur > 0 {
 				idx := bits.TrailingZeros(cur)
 				next_mask := mask | (1 << idx)
-				dp[next_mask][idx] = (dp[next_mask][idx] + dp[mask][i]) % mod
+				dp[next_mask][idx] = (dp[next_mask][idx] + dp[mask][i])
 				cur ^= (1 << idx)
 			}
 		}
@@ -51,7 +50,7 @@ func main() {
 	var ans int64 = 0
 	full_mask := (1 << n) - 1
 	for i := 0; i < n; i++ {
-		ans = (ans + dp[full_mask][i]) % mod
+		ans = (ans + dp[full_mask][i])
 	}
 	fmt.Println(ans)
 }

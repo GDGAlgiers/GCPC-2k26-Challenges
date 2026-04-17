@@ -15,7 +15,7 @@
    * We look for the next element $j$ to add.
    * $j$ must not be in the current mask: `!(mask & (1 << j))`.
    * $j$ must satisfy the distance constraint with the previous element $i$: $|i - j| \le d$.
-   * If both conditions are met, we update the new state: $dp[mask | (1 \ll j)][j] = (dp[mask | (1 \ll j)][j] + dp[mask][i]) \pmod{10^9+7}$.
+   * If both conditions are met, we update the new state: $dp[mask | (1 \ll j)][j] = (dp[mask | (1 \ll j)][j] + dp[mask][i])$.
 3. **Step three — how you extract the final answer**: Once all masks are processed, the final answer is the sum of $dp[(1 \ll n) - 1][i]$ for all $0 \le i < n$. This sum represents all permutations that have visited every node exactly once, regardless of which node they ended on.
 
 ## Complexity
@@ -25,7 +25,7 @@
 
 ## Common Pitfalls
 
-- **Integer Overflow**: Use `long long` for the DP table and the summation. The number of paths can be massive, so the modulo $10^9+7$ must be applied at every addition.
+- **Integer Overflow**: Use `long long` for the DP table and the summation. The number of paths can be massive.
 - **Off-by-one errors**: Mapping the problem's 1-indexed values to 0-indexed bit positions requires careful handling of indices $i$ and $i+1$.
 - **Adjacency Checks**: A common mistake is checking all $n$ nodes for every state. Precomputing the `adj_mask` or restricting the inner loop to $i-d$ to $i+d$ is necessary to stay under the time limit.
 

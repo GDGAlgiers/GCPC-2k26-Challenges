@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-    static final long MOD = 1000000007;
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -29,7 +28,7 @@ public class Main {
                 while (cur > 0) {
                     int idx = Integer.numberOfTrailingZeros(cur);
                     int next_mask = mask | (1 << idx);
-                    dp[next_mask][idx] = (dp[next_mask][idx] + dp[mask][i]) % MOD;
+                    dp[next_mask][idx] = (dp[next_mask][idx] + dp[mask][i]);
                     cur ^= (1 << idx);
                 }
             }
@@ -38,7 +37,7 @@ public class Main {
         long ans = 0;
         int full_mask = (1 << n) - 1;
         for (int i = 0; i < n; i++) {
-            ans = (ans + dp[full_mask][i]) % MOD;
+            ans = (ans + dp[full_mask][i]);
         }
         System.out.println(ans);
         scanner.close();
