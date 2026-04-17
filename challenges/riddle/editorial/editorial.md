@@ -6,7 +6,7 @@
 
 ## Key Observation
 
-Notice that we can represent our numbers as nodes of a graph, we can assign an edge between all pairs of nodes that can be adjacent in a valid permutation (for all $u,v \in \{1,2,\cdots,n\}, u \neq v$, an edge $(u,v)$ exists iff $\left| u - v  \right| \le d$), the problem then reduces to finding the count of all hamiltonian paths in this graph, which is a standard problem.
+> Notice that we can represent our numbers as nodes of a graph, we can assign an edge between all pairs of nodes that can be adjacent in a valid permutation (for all $u,v \in \{1,2,\cdots,n\}, u \neq v$, an edge $(u,v)$ exists iff $\left| u - v  \right| \le d$), the problem then reduces to finding the count of all hamiltonian paths in this graph, which is a standard problem.
 
 ## Approach
 
