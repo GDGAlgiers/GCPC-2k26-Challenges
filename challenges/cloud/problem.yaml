@@ -1,0 +1,16 @@
+# ICPC problem package format — required by DOMjudge 7.x schema validation.
+#
+# problem_format_version: must be exactly '2023-07-draft'
+# uuid:  unique ID for this problem — generate one with:
+#          python3 -c "import uuid; print(uuid.uuid4())"
+#        Replace the placeholder below before publishing.
+# name:  displayed to teams and jury in the DOMjudge UI
+# limits.time_limit: per-test-case time limit in seconds
+# limits.memory:     memory limit in MB
+
+problem_format_version: '2023-07-draft'
+uuid: 8e8d0c55-e039-477d-a413-e7f9fa6a8c8b
+name: Cloud Battle
+limits:
+  time_limit: 1
+  memory: 512
