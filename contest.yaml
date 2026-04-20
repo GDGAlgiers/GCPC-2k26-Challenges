@@ -8,11 +8,10 @@ duration: 5:00:00
 # - label is the letter shown on the scoreboard (A, B, C, ...)
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
-problems: []
-# problems:
-#   - id: problem-id
-#     label: A
-#     color: "#FF5733"
-#     difficulty: easy        # easy | medium | hard
-#     author: "Author Name"
-#     status: draft
+problems:
+  - id: relief-distribution
+    label: B
+    color: "#FF5733"
+    difficulty: easy        # easy | medium | hard
+    author: "Lyes Boudjabout"
+    status: draft
