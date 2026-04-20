@@ -10,7 +10,7 @@ public class Solution {
     }
     
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.lang.System.in);
+        Scanner sc = new Scanner(System.in);
         if (!sc.hasNextInt()) return;
         int n = sc.nextInt();
         int m = sc.nextInt();
