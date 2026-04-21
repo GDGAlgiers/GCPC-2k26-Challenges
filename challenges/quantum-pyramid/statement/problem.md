@@ -12,7 +12,7 @@ You can see a SpeedMachine with 6 input integers in the figure below:
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.35\textwidth]{statement/illustration.png}
+\includegraphics[width=0.35\textwidth]{challenges/quantum-pyramid/statement/illustration.png}
 \caption{Quantum Pyramid Structure}
 \end{figure}
 
