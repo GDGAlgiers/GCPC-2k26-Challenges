@@ -50,20 +50,6 @@ Print a single integer:
 - the minimum total travel time, or
 - `-1` if Nadia cannot visit all damaged relays and still reach city $n$.
 
-## Constraints
-
-- $2 \leq n \leq 10^5$
-- $0 \leq m \leq 2 \cdot 10^5$
-- $1 \leq k \leq 15$
-- $2 \leq c_i \leq n - 1$
-- All relay cities are distinct
-- $1 \leq u, v \leq n$, $u \neq v$
-- $1 \leq w \leq 10^9$
-- Roads are bidirectional
-- Multiple roads between the same pair of cities may exist
-- Time limit: **3 seconds**
-- Memory limit: **512 MB**
-
 ## Sample Input 1
 
 ```text
