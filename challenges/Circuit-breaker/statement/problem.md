@@ -15,13 +15,17 @@ You have been handed the event logs of a live production system. Replay those lo
 ## Input
 
 ```
-nbservices = N, threshold = X, window = W, cooldown = C
-events = [T, S, R]
-queries = [T, S]
+nbservices = N, window = W, threshold = X, cooldown = C
+nb_events
+events = T S R
+nb_queries
+queries = T S
 ```
 
 - **Line 1:** Four integers: number of services $N$, failure window $W$ (seconds), failure threshold $X$, and cooldown duration $C$ (seconds).
+- **Line 2:** Number of eventes
 - **Events lines:** Each event is a triple $T$ $S$ $R$: timestamp, service ID, and result ($0$ = failure, $1$ = success). Events are sorted by $T$.
+- **Line 4:** Number of queries
 - **Queries lines:** Each query is a pair $T$ $S$: timestamp and service ID.
 
 ## Output
