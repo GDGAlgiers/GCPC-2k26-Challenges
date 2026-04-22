@@ -6,7 +6,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
-| —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | —      |
+| —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | Ready      |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.
