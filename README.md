@@ -6,7 +6,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
-| —     | —    | —      | —          | —      |
+| C     | Rassim Sort    | Redhouane Abdellah      | Medium          | Ready      |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.
