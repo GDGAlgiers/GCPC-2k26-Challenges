@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class sol {
+class sol {
     static final int N = 2005;
     static final long OO = 2_000_000_000_000_000_000L;
     static final long MOD = 998244353;
