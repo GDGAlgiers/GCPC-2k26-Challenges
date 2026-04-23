@@ -6,7 +6,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
-| —     | —    | —      | —          | —      |
+| —     | Hoggar Trail   | Firas Mohamed Elamine Kiram      | Hard          | —      |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.
