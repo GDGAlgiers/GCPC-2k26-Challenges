@@ -4,13 +4,6 @@ author: "Firas Mohamed Elamine Kiram"
 difficulty: "Hard"
 ---
 
-<!--
-  RENDER PDF (run from inside the challenge directory, not statement/):
-    ../../scripts/render-pdf.sh
-
-  Requirements: pandoc + texlive-xetex
-    sudo apt install pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
--->
 
 # AI Simulation on Uncle Island
 

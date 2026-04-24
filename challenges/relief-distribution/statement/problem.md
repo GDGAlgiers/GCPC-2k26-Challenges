@@ -4,13 +4,6 @@ author: "Lyes Boudjabout"
 difficulty: "Easy"
 ---
 
-<!--
-  RENDER PDF (run from inside the challenge directory, not statement/):
-    ../../scripts/render-pdf.sh
-
-  Requirements: pandoc + texlive-xetex
-    sudo apt install pandoc texlive-xetex texlive-fonts-recommended texlive-latex-extra
--->
 
 # Relief Distribution
 
