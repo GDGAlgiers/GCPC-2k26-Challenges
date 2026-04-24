@@ -9,6 +9,12 @@ duration: 5:00:00
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
 problems:
+  - id: breadboard
+    label: A
+    color: "#00FFFF"
+    difficulty: medium        # easy | medium | hard
+    author: "Raouf Ould Ali"
+    status: ready
   - id: riddle
     label: 
     color: "#FF5733"
