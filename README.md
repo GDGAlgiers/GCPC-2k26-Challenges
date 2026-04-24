@@ -6,6 +6,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
+| —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | Ready      |
 | B     | Cloud Battle    | Redhouane Abdellah      | Medium          | Ready      |
 | A     | Permutation Riddle    | Redhouane Abdellah      | Medium          | Ready      |
 

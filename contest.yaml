@@ -9,6 +9,12 @@ duration: 5:00:00
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
 problems:
+  - id: AI Simulation on Uncle Island
+    label: A
+    color: "#FF5733"
+    difficulty: Hard        # easy | medium | hard
+    author: "Firas Mohamed Elamine Kiram"
+    status: draft
   - id: cloud
      label: B
      color: "#FF5733"
