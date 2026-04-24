@@ -8,14 +8,55 @@ duration: 5:00:00
 # - label is the letter shown on the scoreboard (A, B, C, ...)
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
-problems: [
+problems:
   - id: cloud
      label: B
      color: "#FF5733"
      difficulty: medium        # easy | medium | hard
      author: "Redhouane Abdellah"
      status: ready
-]
+  - id: quantum-pyramid
+    label: A
+    color: "#FF5733"
+    difficulty: hard        # easy | medium | hard
+    author: "Raouf Ould Ali"
+    status: ready
+  - id: tricks
+    label: A
+    color: "#FF0000"
+    difficulty: hard        # easy | medium | hard
+    author: "Raouf Ould Ali"
+    status: ready
+  - id: breadboard
+    label: A
+    color: "#00FFFF"
+    difficulty: medium        # easy | medium | hard
+    author: "Raouf Ould Ali"
+    status: ready
+  - id: riddle
+    label: 
+    color: "#FF5733"
+    difficulty: medium
+    author: "Redhouane Abdellah"
+    status: ready
+  - id: festival-queue-merges
+    label: C
+    color: "#FF5733"
+    difficulty: easy        # easy | medium | hard
+    author: "Lyes Boudjabout"
+    status: draft
+  - id: relief-distribution
+    label: B
+    color: "#FF5733"
+    difficulty: easy        # easy | medium | hard
+    author: "Lyes Boudjabout"
+    status: draft
+  - id: dungeon-escape
+    label: A
+    color: "#FFFFFF"
+    difficulty: easy
+    author: "Lyes Boudjabout"
+    status: draft
 # problems:
 #   - id: problem-id
 #     label: A
