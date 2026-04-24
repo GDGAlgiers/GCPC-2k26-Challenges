@@ -15,3 +15,16 @@ problems:
     difficulty: easy        # easy | medium | hard
     author: "Lyes Boudjabout"
     status: draft
+  - id: dungeon-escape
+    label: A
+    color: "#FFFFFF"
+    difficulty: easy
+    author: "Lyes Boudjabout"
+    status: draft
+# problems:
+#   - id: problem-id
+#     label: A
+#     color: "#FF5733"
+#     difficulty: easy        # easy | medium | hard
+#     author: "Author Name"
+#     status: draft
