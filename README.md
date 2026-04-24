@@ -6,12 +6,21 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
-| C     | Rassim Sort    | Redhouane Abdellah      | Medium          | Ready      |
-| A | [The Sarrus Oracle](./challenges/sarrus-oracle/) | tarek-ait | medium | tested |
-| —     | Hoggar Trail   | Firas Mohamed Elamine Kiram      | Hard          | —      |
-| —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | Ready      |
-| B     | Cloud Battle    | Redhouane Abdellah      | Medium          | Ready      |
-| A     | Permutation Riddle    | Redhouane Abdellah      | Medium          | Ready      |
+| A | [Dungeon Escape](./challenges/dungeon-escape/statement/problem.md) | Lyes Boudjabout | Easy | Published |
+| B | [Festival Queue Merges](./challenges/festival-queue-merges/statement/problem.md) | Lyes Boudjabout | Easy | Published |
+| C | [Relief Distribution](./challenges/relief-distribution/statement/problem.md) | Lyes Boudjabout | Easy | Published |
+| D | [Arduino Breadboard Setup](./challenges/breadboard/statement/problem.md) | Raouf Ould Ali | Medium | Published |
+| E | [Circuit Breaker](./challenges/circuit-breaker/statement/problem.md) | Bouzara Zakaria | Medium | Published |
+| F | [Cloud Battle](./challenges/cloud/statement/problem.md) | Redhouane Abdellah | Medium | Published |
+| G | [Emergency Lane](./challenges/emergency-lane/statement/problem.md) | tarek-ait | Medium | Published |
+| H | [Permutation Riddle](./challenges/riddle/statement/problem.md) | Redhouane Abdellah | Medium | Published |
+| I | [The Sarrus Oracle](./challenges/sarrus-oracle/statement/problem.md) | tarek-ait | Medium | Published |
+| J | [Rassim Sort](./challenges/sort/statement/problem.md) | Redhouane Abdellah | Medium | Published |
+| K | [Midnight Relay Tour](./challenges/midnight-relay-tour/statement/problem.md) | tarek-ait | Medium-Hard | Published |
+| L | [AI Simulation on Uncle Island](./challenges/ai-simulation-uncle-island/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
+| M | [Hoggar Trail](./challenges/hoggar-trail/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
+| N | [Quantum Pyramid](./challenges/quantum-pyramid/statement/problem.md) | Raouf Ould Ali | Hard | Published |
+| O | [Card Tricks](./challenges/tricks/statement/problem.md) | Raouf Ould Ali | Hard | Published |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.

@@ -1,16 +1,18 @@
 import java.util.Scanner;
 
-public class Main {
+public class sol {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        if (!scanner.hasNextInt()) return;
+        if (!scanner.hasNextInt())
+            return;
         int n = scanner.nextInt();
         int d = scanner.nextInt();
-        
+
         long[][] dp = new long[1 << n][n];
-        for (int i = 0; i < n; i++) dp[1 << i][i] = 1;
-        
+        for (int i = 0; i < n; i++)
+            dp[1 << i][i] = 1;
+
         int[] adj_mask = new int[n];
         for (int i = 0; i < n; i++) {
             for (int j = Math.max(i - d, 0); j < i; j++) {
@@ -20,10 +22,11 @@ public class Main {
                 adj_mask[i] |= (1 << j);
             }
         }
-        
+
         for (int mask = 1; mask < (1 << n); mask++) {
             for (int i = 0; i < n; i++) {
-                if ((mask & (1 << i)) == 0 || dp[mask][i] == 0) continue;
+                if ((mask & (1 << i)) == 0 || dp[mask][i] == 0)
+                    continue;
                 int cur = adj_mask[i] & (~mask);
                 while (cur > 0) {
                     int idx = Integer.numberOfTrailingZeros(cur);
@@ -33,7 +36,7 @@ public class Main {
                 }
             }
         }
-        
+
         long ans = 0;
         int full_mask = (1 << n) - 1;
         for (int i = 0; i < n; i++) {
