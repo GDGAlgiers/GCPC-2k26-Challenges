@@ -7,6 +7,11 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
 | C     | Rassim Sort    | Redhouane Abdellah      | Medium          | Ready      |
+| A | [The Sarrus Oracle](./challenges/sarrus-oracle/) | tarek-ait | medium | tested |
+| —     | Hoggar Trail   | Firas Mohamed Elamine Kiram      | Hard          | —      |
+| —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | Ready      |
+| B     | Cloud Battle    | Redhouane Abdellah      | Medium          | Ready      |
+| A     | Permutation Riddle    | Redhouane Abdellah      | Medium          | Ready      |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.
@@ -152,4 +157,3 @@ sudo tlmgr update --self && sudo tlmgr install collection-xetex collection-latex
 **Windows:** install [Pandoc](https://pandoc.org/installing.html) + [MiKTeX](https://miktex.org) (auto-downloads missing LaTeX packages on first run).
 
 > **No local install needed?** Push your `.md` — the GitHub Actions workflow renders the PDF automatically and uploads it as a downloadable artifact.
-
