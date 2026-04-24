@@ -15,7 +15,24 @@ problems:
     difficulty: medium
     author: "Redhouane Abdellah"
     status: ready
-
+  - id: festival-queue-merges
+    label: C
+    color: "#FF5733"
+    difficulty: easy        # easy | medium | hard
+    author: "Lyes Boudjabout"
+    status: draft
+  - id: relief-distribution
+    label: B
+    color: "#FF5733"
+    difficulty: easy        # easy | medium | hard
+    author: "Lyes Boudjabout"
+    status: draft
+  - id: dungeon-escape
+    label: A
+    color: "#FFFFFF"
+    difficulty: easy
+    author: "Lyes Boudjabout"
+    status: draft
 # problems:
 #   - id: problem-id
 #     label: A
