@@ -9,6 +9,12 @@ duration: 5:00:00
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
 problems:
+  - id: riddle
+    label: 
+    color: "#FF5733"
+    difficulty: medium
+    author: "Redhouane Abdellah"
+    status: ready
   - id: festival-queue-merges
     label: C
     color: "#FF5733"
