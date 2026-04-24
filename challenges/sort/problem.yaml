@@ -12,5 +12,5 @@ problem_format_version: '2023-07-draft'
 uuid: aaec65ed-2bdf-48c3-b818-2a655255e942
 name: Rassim Sort
 limits:
-  time_limit: 1
+  time_limit: 2
   memory: 256

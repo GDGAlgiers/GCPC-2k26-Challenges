@@ -10,7 +10,7 @@
 
 problem_format_version: '2023-07-draft'
 uuid: 14408ed1-2b89-491e-b9e1-9796fc6adf4b
-name: Circuit breaker
+name: Circuit Breaker
 limits:
   time_limit: 2
   memory: 256

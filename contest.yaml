@@ -1,7 +1,7 @@
 name: GCPC Algiers 2026
 short-name: gcpc2026
-start-time: 2026-XX-XXT09:00:00+01:00
-duration: 5:00:00
+start-time: 2026-04-25T08:30:00+01:00
+duration: 6:00:00
 
 # One entry per problem.
 # - id must match the folder name under challenges/
