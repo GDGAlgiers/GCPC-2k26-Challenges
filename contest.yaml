@@ -27,74 +27,80 @@ problems:
     difficulty: easy
     author: "Lyes Boudjabout"
     status: published
-  - id: breadboard
+  - id: latency-budget
     label: D
+    color: "#EC0040"
+    difficulty: easy
+    author: "Bouzara Zakaria"
+    status: published
+  - id: breadboard
+    label: E
     color: "#00BCD4"
     difficulty: medium
     author: "Raouf Ould Ali"
     status: published
   - id: circuit-breaker
-    label: E
+    label: F
     color: "#03A9F4"
     difficulty: medium
     author: "Bouzara Zakaria"
     status: published
   - id: cloud
-    label: F
+    label: G
     color: "#2196F3"
     difficulty: medium
     author: "Redhouane Abdellah"
     status: published
   - id: emergency-lane
-    label: G
+    label: H
     color: "#9C27B0"
     difficulty: medium
     author: "tarek-ait"
     status: published
   - id: riddle
-    label: H
+    label: I
     color: "#E91E63"
     difficulty: medium
     author: "Redhouane Abdellah"
     status: published
   - id: sarrus-oracle
-    label: I
+    label: J
     color: "#F4A261"
     difficulty: medium
     author: "tarek-ait"
     status: published
   - id: sort
-    label: J
+    label: K
     color: "#FF9800"
     difficulty: medium
     author: "Redhouane Abdellah"
     status: published
   - id: midnight-relay-tour
-    label: K
+    label: L
     color: "#FF5722"
     difficulty: medium
     author: "tarek-ait"
     status: published
   - id: ai-simulation-uncle-island
-    label: L
+    label: M
     color: "#795548"
     difficulty: hard
     author: "Firas Mohamed Elamine Kiram"
     status: published
   - id: hoggar-trail
-    label: M
+    label: N
     color: "#607D8B"
     difficulty: hard
     author: "Firas Mohamed Elamine Kiram"
     status: published
   - id: quantum-pyramid
-    label: N
+    label: O
     color: "#9E9E9E"
     difficulty: hard
     author: "Raouf Ould Ali"
     status: published
   - id: tricks
-    label: O
+    label: P
     color: "#F44336"
     difficulty: hard
     author: "Raouf Ould Ali"
