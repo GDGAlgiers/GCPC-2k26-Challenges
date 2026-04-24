@@ -105,3 +105,9 @@ problems:
     difficulty: hard
     author: "Raouf Ould Ali"
     status: published
+  - id: dzNet-signal-coverage
+    label: P
+    color: "#FFC107"
+    difficulty: medium
+    author: "Nabil Ghemam Djeridi"
+    status: published
