@@ -8,7 +8,14 @@ duration: 5:00:00
 # - label is the letter shown on the scoreboard (A, B, C, ...)
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
+# problems: []
 problems:
+  - id: tricks
+    label: A
+    color: "#FF0000"
+    difficulty: hard        # easy | medium | hard
+    author: "Raouf Ould Ali"
+    status: ready
   - id: breadboard
     label: A
     color: "#00FFFF"
