@@ -1,13 +1,3 @@
-# ICPC problem package format — required by DOMjudge 7.x schema validation.
-#
-# problem_format_version: must be exactly '2023-07-draft'
-# uuid:  unique ID for this problem — generate one with:
-#          python3 -c "import uuid; print(uuid.uuid4())"
-#        Replace the placeholder below before publishing.
-# name:  displayed to teams and jury in the DOMjudge UI
-# limits.time_limit: per-test-case time limit in seconds
-# limits.memory:     memory limit in MB
-
 problem_format_version: '2023-07-draft'
 uuid: ae1be6ce-8ecf-47bc-a511-543fd4329116
 name: Relief Distribution
