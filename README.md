@@ -6,6 +6,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
+| C     | Rassim Sort    | Redhouane Abdellah      | Medium          | Ready      |
 | A | [The Sarrus Oracle](./challenges/sarrus-oracle/) | tarek-ait | medium | tested |
 | —     | Hoggar Trail   | Firas Mohamed Elamine Kiram      | Hard          | —      |
 | —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | Ready      |
