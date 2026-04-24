@@ -9,19 +9,21 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 | A | [Dungeon Escape](./challenges/dungeon-escape/statement/problem.md) | Lyes Boudjabout | Easy | Published |
 | B | [Festival Queue Merges](./challenges/festival-queue-merges/statement/problem.md) | Lyes Boudjabout | Easy | Published |
 | C | [Relief Distribution](./challenges/relief-distribution/statement/problem.md) | Lyes Boudjabout | Easy | Published |
-| D | [Arduino Breadboard Setup](./challenges/breadboard/statement/problem.md) | Raouf Ould Ali | Medium | Published |
-| E | [Circuit Breaker](./challenges/circuit-breaker/statement/problem.md) | Bouzara Zakaria | Medium | Published |
-| F | [Cloud Battle](./challenges/cloud/statement/problem.md) | Redhouane Abdellah | Medium | Published |
-| G | [Emergency Lane](./challenges/emergency-lane/statement/problem.md) | tarek-ait | Medium | Published |
-| H | [Permutation Riddle](./challenges/riddle/statement/problem.md) | Redhouane Abdellah | Medium | Published |
-| I | [The Sarrus Oracle](./challenges/sarrus-oracle/statement/problem.md) | tarek-ait | Medium | Published |
-| J | [Rassim Sort](./challenges/sort/statement/problem.md) | Redhouane Abdellah | Medium | Published |
-| K | [Midnight Relay Tour](./challenges/midnight-relay-tour/statement/problem.md) | tarek-ait | Medium | Published |
-| L | [AI Simulation on Uncle Island](./challenges/ai-simulation-uncle-island/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
-| M | [Hoggar Trail](./challenges/hoggar-trail/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
-| N | [Quantum Pyramid](./challenges/quantum-pyramid/statement/problem.md) | Raouf Ould Ali | Hard | Published |
-| O | [Card Tricks](./challenges/tricks/statement/problem.md) | Raouf Ould Ali | Hard | Published |
-| P | [DzNet Signal Coverage](./challenges/dzNet-signal-coverage/statement/problem.md) | Nabil Ghemam Djeridi | Medium | Published |
+| D | [Latency Budget](./challenges/latency-budget/statement/problem.md) | Bouzara Zakaria | Easy | Published |
+| E | [Arduino Breadboard Setup](./challenges/breadboard/statement/problem.md) | Raouf Ould Ali | Medium | Published |
+| F | [Circuit Breaker](./challenges/circuit-breaker/statement/problem.md) | Bouzara Zakaria | Medium | Published |
+| G | [Cloud Battle](./challenges/cloud/statement/problem.md) | Redhouane Abdellah | Medium | Published |
+| H | [Emergency Lane](./challenges/emergency-lane/statement/problem.md) | tarek-ait | Medium | Published |
+| I | [Permutation Riddle](./challenges/riddle/statement/problem.md) | Redhouane Abdellah | Medium | Published |
+| J | [The Sarrus Oracle](./challenges/sarrus-oracle/statement/problem.md) | tarek-ait | Medium | Published |
+| K | [Rassim Sort](./challenges/sort/statement/problem.md) | Redhouane Abdellah | Medium | Published |
+| L | [Midnight Relay Tour](./challenges/midnight-relay-tour/statement/problem.md) | tarek-ait | Medium | Published |
+| M | [AI Simulation on Uncle Island](./challenges/ai-simulation-uncle-island/statement/problem.md) | Firas Mohamed Elamine KiNram | Hard | Published |
+| N | [Hoggar Trail](./challenges/hoggar-trail/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
+| O | [Quantum Pyramid](./challenges/quantum-pyramid/statement/problem.md) | Raouf Ould Ali | Hard | Published |
+| P | [Card Tricks](./challenges/tricks/statement/problem.md) | Raouf Ould Ali | Hard | Published |
+| Q | [DzNet Signal Coverage](./challenges/dzNet-signal-coverage/statement/problem.md) | Nabil Ghemam Djeridi | Medium | Published |
+
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.

@@ -1,0 +1,6 @@
+problem_format_version: "2023-07-draft"
+uuid: ff718a91-67b0-4cbe-b4e6-b857ae528e71
+name: Latency Budget
+limits:
+  time_limit: 2
+  memory: 512
