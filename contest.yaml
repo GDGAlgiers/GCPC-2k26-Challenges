@@ -8,7 +8,13 @@ duration: 5:00:00
 # - label is the letter shown on the scoreboard (A, B, C, ...)
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
-problems: []
+problems:
+  - id: dungeon-escape
+    label: A
+    color: "#FFFFFF"
+    difficulty: easy
+    author: "Lyes Boudjabout"
+    status: draft
 # problems:
 #   - id: problem-id
 #     label: A
