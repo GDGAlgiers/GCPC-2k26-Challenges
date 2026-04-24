@@ -7,6 +7,10 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 | Label | Name | Author | Difficulty | Status |
 |-------|------|--------|------------|--------|
 | A | [The Sarrus Oracle](./challenges/sarrus-oracle/) | tarek-ait | medium | tested |
+| —     | Hoggar Trail   | Firas Mohamed Elamine Kiram      | Hard          | —      |
+| —     |  AI Simulation on Uncle Island   | Firas Med Elamine Kiram    | Hard          | Ready      |
+| B     | Cloud Battle    | Redhouane Abdellah      | Medium          | Ready      |
+| A     | Permutation Riddle    | Redhouane Abdellah      | Medium          | Ready      |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.
