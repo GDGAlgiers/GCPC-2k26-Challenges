@@ -8,8 +8,13 @@ duration: 5:00:00
 # - label is the letter shown on the scoreboard (A, B, C, ...)
 # - color is the balloon color shown in DOMjudge (also set in domjudge-problem.ini)
 # - status: draft | ready | tested | published
-# problems: []
 problems:
+  - id: quantum-pyramid
+    label: A
+    color: "#FF5733"
+    difficulty: hard        # easy | medium | hard
+    author: "Raouf Ould Ali"
+    status: ready
   - id: tricks
     label: A
     color: "#FF0000"
