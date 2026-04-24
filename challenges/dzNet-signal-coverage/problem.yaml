@@ -1,0 +1,6 @@
+problem_format_version: '2023-07-draft'
+uuid: a9909295-d3b6-4c86-8b61-41f3d83171ff
+name: DzNet Signal Coverage
+limits:
+  time_limit: 2
+  memory: 512

@@ -21,6 +21,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 | M | [Hoggar Trail](./challenges/hoggar-trail/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
 | N | [Quantum Pyramid](./challenges/quantum-pyramid/statement/problem.md) | Raouf Ould Ali | Hard | Published |
 | O | [Card Tricks](./challenges/tricks/statement/problem.md) | Raouf Ould Ali | Hard | Published |
+| P | [DzNet Signal Coverage](./challenges/dzNet-signal-coverage/statement/problem.md) | Nabil Ghemam Djeridi | Medium | Published |
 
 > Status lifecycle: `draft` → `ready` → `tested` → `published`
 > Update this table and `contest.yaml` together when adding/changing a problem.
