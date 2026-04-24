@@ -16,7 +16,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 | H | [Permutation Riddle](./challenges/riddle/statement/problem.md) | Redhouane Abdellah | Medium | Published |
 | I | [The Sarrus Oracle](./challenges/sarrus-oracle/statement/problem.md) | tarek-ait | Medium | Published |
 | J | [Rassim Sort](./challenges/sort/statement/problem.md) | Redhouane Abdellah | Medium | Published |
-| K | [Midnight Relay Tour](./challenges/midnight-relay-tour/statement/problem.md) | tarek-ait | Medium-Hard | Published |
+| K | [Midnight Relay Tour](./challenges/midnight-relay-tour/statement/problem.md) | tarek-ait | Medium | Published |
 | L | [AI Simulation on Uncle Island](./challenges/ai-simulation-uncle-island/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
 | M | [Hoggar Trail](./challenges/hoggar-trail/statement/problem.md) | Firas Mohamed Elamine Kiram | Hard | Published |
 | N | [Quantum Pyramid](./challenges/quantum-pyramid/statement/problem.md) | Raouf Ould Ali | Hard | Published |

@@ -72,7 +72,7 @@ problems:
   - id: midnight-relay-tour
     label: K
     color: "#FF5722"
-    difficulty: medium-hard
+    difficulty: medium
     author: "tarek-ait"
     status: published
   - id: ai-simulation-uncle-island
