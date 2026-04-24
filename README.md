@@ -29,7 +29,7 @@ Contest challenges for **GDG Algiers — GCPC 2026**.
 
 ## Adding a New Challenge
 
-1. Copy `challenges/_challenge-template/` → `challenges/<problem-id>/`
+1. Copy `challenge_template/` → `challenges/<problem-id>/`
    - Use a short lowercase slug as the folder name, e.g. `robery` or `allo-nokia`
    - This folder name becomes the problem's external ID in DOMjudge
 2. Generate a UUID and put it in `problem.yaml`:
